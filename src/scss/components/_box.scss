@@ -1,0 +1,26 @@
+.box {
+    flex: 1;
+    // width: 100%;
+    background-color: $color-onBackground;
+    margin-left: 1.5rem;
+    // height: 70vh;
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    @include respond(tab-port){
+        width: 100%;
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+
+    &__map {
+        width: 100%;
+        min-width: 90%;
+        height: 50rem;
+        z-index: 10;
+
+        margin-bottom: 1.5rem;
+    }
+}

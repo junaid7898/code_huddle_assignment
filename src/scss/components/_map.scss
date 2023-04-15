@@ -1,0 +1,42 @@
+.map__marker {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position: relative;
+
+    background-color: rgb(219, 216, 216);
+    padding: .5rem;
+    cursor: pointer;
+    transition: all .2s;
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &:hover &--address{
+        display: block;
+    }
+
+    &--inner {
+        background-color: $color-primary;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+
+    }
+
+    &--address {
+        position: absolute;
+        background-color: $color-onBackground;
+        top: 0;
+        transform: translate(-50% , -100%);
+        color: #fff;
+        display: none;
+        transition: all 0.3s;
+        min-width: 10rem;
+        padding: .5rem;
+        text-align: center;
+        border-radius: 4px;
+
+        text-transform: capitalize;
+    }
+}

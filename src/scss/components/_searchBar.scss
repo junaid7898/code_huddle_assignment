@@ -1,0 +1,28 @@
+.search {
+    border: 1px solid $color-primary;
+    width: 100%;
+    padding: 1rem;
+
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    &__input {
+        background-color: transparent;
+        border: 0;
+        flex: 1;
+        margin-right: 1rem;
+
+        &::placeholder {
+            color: #fff;
+        }
+
+        &:focus {
+            outline: none;
+            color: #fff;
+        }
+    }
+
+
+}
