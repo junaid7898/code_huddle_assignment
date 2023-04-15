@@ -42,7 +42,7 @@
     &__list {
         background-color: $color-onBackground;
         // background-color: red;
-        height: 0;
+        // height: 0;
         width: 0;
 
         transition: all 0.3s;
@@ -58,7 +58,9 @@
         &--open {
             display: block;
             width: 35rem;
-            height: 50rem;
+            // height: 50rem;
+            padding-bottom: 1.5rem;
+
 
             transition: all .3s;
 
@@ -71,6 +73,25 @@
         }
 
         &--container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &--title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-top: 1rem;
+
+            & p {
+                margin-right: 1rem;
+            }
+        }
+
+        &--items {
             display: grid;
             grid-template-columns: repeat(2,1fr);
             margin-top: 1rem;

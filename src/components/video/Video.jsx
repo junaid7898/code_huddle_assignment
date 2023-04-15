@@ -17,16 +17,31 @@ const VideoInput = ({onSelect}) => {
 } 
 const VideoComponent = ({name, url}) => {
     return <div className='video__container--item'>
-            <video
-            controls
-            src={url}
-            className='video__container--video'
-          />
-          <p className='video__container--name'>{name}</p>
+        {
+             (/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/gm.test(url)) ?
+                <iframe
+                    src = {url}
+                    className='video__container--video'
+                />
+             :
+             <>
+                <video
+                    controls
+                    src={url}
+                    className='video__container--video'
+                />
+                <p className='video__container--name'>{name}</p>
+             </>
+        }
+
     </div>
 }
 const Video = () => {
-    const [selectedVideos, setSelectedVideo] = useState([])
+    const [selectedVideos, setSelectedVideo] = useState([
+        {url: 'https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1'},
+        {url: 'https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1'},
+        {url: 'https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1'},
+    ])
 
     //* video select handler
     const handleVideoSelect = (e) => {
